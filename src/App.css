@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+  font-family: "nanumsquare";
+}
+
+.blog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  height: 60px;
+}
+
+.profile-icon {
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgb(105, 67, 14);
+}
+
+.profile-box {
+  display: flex;
+  padding-left: 10px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: center; */
+  justify-content: space-evenly;
+  padding-left: 6px;
+}
+
+.name span:first-child {
+  font-weight: 900;
+}
+
+.name span:last-child {
+  font-size: 0.8rem;
+}
+
+.letter-number {
+  padding-right: 100px;
+}
+
+.letter-number h3 {
+  font-weight: 900;
+  color: lightsalmon;
+  font-size: 1.1rem;
+}
+
+
+.hamburger__wrapper {
+  position: relative;
+  display: flex;
+  padding-right: 10px;
+  /* justify-content: center; */
+}
+
+.nav__hamburger {
+  background-color: transparent;
+  /* border: none; */
+  border: 1px solid lightsalmon;
+  width: 40px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+}
+
+.nav__hamburger span {
+  width: 20px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: lightsalmon;
+}
+
+
+
+
+
+
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
