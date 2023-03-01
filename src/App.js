@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
-import "./style.scss";
 
 import logo from './logo.svg';
 import './App.css';
