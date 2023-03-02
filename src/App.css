@@ -1,7 +1,6 @@
 :root {
-  --title-font: 
+  --title-font: ;
 }
-
 
 .App {
   text-align: center;
@@ -53,7 +52,6 @@
   color: lightsalmon;
   font-size: 1.1rem;
 }
-
 
 nav {
   position: relative;
@@ -109,6 +107,7 @@ article {
 .category {
   font-weight: 600;
   color: rgb(227, 121, 80);
+  /* color:lightcyan; */
   /* color: rgb(255, 128, 17); */
   /* color: rgb(255, 123, 17); */
   /* color: lightsalmon; */
@@ -122,9 +121,47 @@ article {
   cursor: pointer;
 }
 
+/* 모달창 */
+.letter__modal{
+  padding: 15px;
+  margin: 10px 25px;
+}
 
+.letter__modal--title {
+  display: flex;
+  justify-content: center;
+}
 
+.modal-content {
+  padding: 10px;
+}
 
+/*  */
+
+hr {
+  background:rgb(240, 232, 232);
+  height:1px;
+  border:0;
+}
+
+/* nav 모달창 */
+.nav__modal {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  background-color: rgb(255, 242, 242);
+
+}
+
+.nav-title {
+  list-style: none;
+  font-size: 1.2rem;
+
+}
+
+.bold {
+  font-weight: 900;
+}
 
 
 
@@ -133,8 +170,6 @@ article {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-
 
 @keyframes App-logo-spin {
   from {
