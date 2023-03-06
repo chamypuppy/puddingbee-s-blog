@@ -5,6 +5,7 @@ import { faComment } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "./logo.svg";
 import "./App.css";
+import userEvent from "@testing-library/user-event";
 
 function App() {
   let [title] = useState([
@@ -28,6 +29,7 @@ function App() {
   ]);
   let [modal, setModal] = useState(false);
   let [object, setObject] = useState(0);
+  let [navModal, setNavModal] = useState(false);
 
   const clock = () => {
     let today = new Date();
@@ -69,7 +71,12 @@ function App() {
         </div>
 
         <nav className="hamburger__wrapper">
-          <button className="nav__hamburger">
+          <button
+            className="nav__hamburger"
+            onClick={() => {
+              setNavModal(true);
+            }}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -95,9 +102,10 @@ function App() {
                   className="like"
                   onClick={(e) => {
                     likeCount(i);
+                    e.stopPropagation();
                   }}
                 >
-                  🧡 {like[i]}
+                  <span className="heart-btn">❤</span> {like[i]}
                 </span>{" "}
                 &nbsp;
                 <FontAwesomeIcon icon={faComment} /* color="gray" */ /> 0
@@ -118,15 +126,7 @@ function App() {
         />
       ) : null}
 
-      <div className="nav__modal">
-        <ul className="nav-title">
-          <li className="bold">카테고리 전체</li>
-          <li className="bold">디저트</li>
-          <li className="bold">레시피</li>
-          <li>맛있는 음료</li>
-          <li>베이킹</li>
-        </ul>
-      </div>
+      {navModal == true ? <NavModal setNavModal={setNavModal} /> : null}
     </div>
   );
 }
@@ -135,7 +135,8 @@ function Modal(props) {
   return (
     <div
       className="letter__modal"
-      style={{ backgroundColor: props.bgColor[props.object] }}>
+      style={{ backgroundColor: props.bgColor[props.object] }}
+    >
       <span className="category">디저트 </span>
       <h3 className="title letter__modal--title">
         {props.title[props.object]}
@@ -147,6 +148,31 @@ function Modal(props) {
       <div className="modal-content">
         {props.modalLetter[Object.keys(props.modalLetter)[props.object]]}
       </div>
+    </div>
+  );
+}
+
+function NavModal(props) {
+  return (
+    <div className="nav__modal">
+      <div className="cancel-btn-wrapper">
+        <button
+          className="cancel-btn"
+          onClick={() => {
+            props.setNavModal(false);
+          }}
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <ul className="nav-title">
+        <li className="bold">카테고리 전체</li>
+        <li className="bold">디저트</li>
+        <li className="bold">레시피</li>
+        <li>맛있는 음료</li>
+        <li>베이킹</li>
+      </ul>
     </div>
   );
 }
